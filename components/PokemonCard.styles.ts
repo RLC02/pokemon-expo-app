@@ -1,0 +1,167 @@
+import { StyleSheet, Platform } from 'react-native';
+
+export const styles = StyleSheet.create({
+  cardContainer: {
+    backgroundColor: '#161821',
+    borderRadius: 20,
+    padding: 16,
+    alignItems: 'center',
+    position: 'relative',
+    overflow: 'hidden',
+    shadowColor: '#000000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 10,
+    elevation: 5,
+    ...Platform.select({
+      web: {
+        cursor: 'pointer',
+        transition: 'all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)',
+      },
+    }),
+  },
+  cardContainerHovered: {
+    transform: [{ scale: 1.03 }, { translateY: -4 }],
+    backgroundColor: '#1E202C',
+    shadowOpacity: 0.5,
+    shadowRadius: 15,
+  },
+  idText: {
+    position: 'absolute',
+    top: 12,
+    right: 14,
+    color: 'rgba(255, 255, 255, 0.15)',
+    fontSize: 14,
+    fontWeight: '800',
+  },
+  spriteContainer: {
+    width: 120,
+    height: 120,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginVertical: 12,
+    position: 'relative',
+  },
+  roundBackground: {
+    position: 'absolute',
+    width: 90,
+    height: 90,
+    borderRadius: 45,
+    opacity: 0.15,
+  },
+  spriteImage: {
+    width: 78,
+    height: 78,
+    zIndex: 2,
+    ...Platform.select({
+      web: {
+        filter: 'drop-shadow(0px 8px 12px rgba(0,0,0,0.25))',
+        transition: 'transform 0.3s ease',
+      },
+    }),
+  },
+  spriteImageHovered: {
+    transform: [{ scale: 1.15 }, { translateY: -5 }],
+    ...Platform.select({
+      web: {
+        filter: 'drop-shadow(0px 12px 16px rgba(0,0,0,0.35))',
+      },
+    }),
+  },
+  pokemonName: {
+    color: '#FFFFFF',
+    fontSize: 18,
+    fontWeight: '700',
+    marginBottom: 8,
+    textAlign: 'center',
+  },
+  typeBadgeContainer: {
+    flexDirection: 'row',
+    gap: 6,
+    marginBottom: 12,
+  },
+  typeBadge: {
+    paddingVertical: 3,
+    paddingHorizontal: 10,
+    borderRadius: 12,
+  },
+  typeText: {
+    color: '#FFFFFF',
+    fontSize: 10,
+    fontWeight: '800',
+    letterSpacing: 0.5,
+  },
+  statsContainer: {
+    width: '100%',
+    paddingTop: 10,
+    borderTopWidth: 1,
+    borderTopColor: 'rgba(255, 255, 255, 0.05)',
+    marginBottom: 10,
+    gap: 6,
+  },
+  statRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  },
+  statName: {
+    color: '#8B949E',
+    fontSize: 9,
+    fontWeight: '700',
+    width: 45,
+  },
+  statBarBg: {
+    flex: 1,
+    height: 6,
+    backgroundColor: 'rgba(255, 255, 255, 0.05)',
+    borderRadius: 3,
+    marginHorizontal: 8,
+    overflow: 'hidden',
+  },
+  statBarFill: {
+    height: '100%',
+    borderRadius: 3,
+  },
+  statValue: {
+    color: '#FFFFFF',
+    fontSize: 10,
+    fontWeight: '600',
+    width: 24,
+    textAlign: 'right',
+  },
+  pokedexHeaderMini: {
+    position: 'absolute',
+    top: 14,
+    left: 14,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+  },
+  miniBlueLight: {
+    width: 12,
+    height: 12,
+    borderRadius: 6,
+    backgroundColor: '#00A8FF',
+    borderWidth: 1,
+    borderColor: '#FFFFFF',
+  },
+  miniRedLight: {
+    width: 5,
+    height: 5,
+    borderRadius: 2.5,
+    backgroundColor: '#FF3E3E',
+  },
+  miniYellowLight: {
+    width: 5,
+    height: 5,
+    borderRadius: 2.5,
+    backgroundColor: '#F4D23C',
+  },
+  miniGreenLight: {
+    width: 5,
+    height: 5,
+    borderRadius: 2.5,
+    backgroundColor: '#4CD964',
+  },
+});
